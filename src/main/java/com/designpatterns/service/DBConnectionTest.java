@@ -71,6 +71,21 @@ public class DBConnectionTest {
         }
     }
 
+//    ------------------------------------------------------------------
+//    check the hashcode of database connection
+//    check the time of the first connection and compare with later ones
+//    ------------------------------------------------------------------
 
+
+    @org.junit.Test
+    public void performanceTest(){
+        long time = System.currentTimeMillis();
+        System.out.println(DBConnection.getDbConnection());
+        System.out.println(System.currentTimeMillis() - time);
+
+        time = System.currentTimeMillis();
+        System.out.println(DBConnection.getDbConnection());
+        System.out.println(System.currentTimeMillis() - time);
+    }
 
 }
